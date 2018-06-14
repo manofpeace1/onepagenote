@@ -1,4 +1,4 @@
-package com.manofstudios.pieceofpaper;
+package com.manofstudios.onepagenote;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

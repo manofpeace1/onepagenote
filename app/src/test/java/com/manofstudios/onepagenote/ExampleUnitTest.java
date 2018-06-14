@@ -1,4 +1,4 @@
-package com.manofstudios.pieceofpaper;
+package com.manofstudios.onepagenote;
 
 import org.junit.Test;
 

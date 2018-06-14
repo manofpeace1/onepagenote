@@ -1,4 +1,4 @@
-package com.manofstudios.pieceofpaper;
+package com.manofstudios.onepagenote;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
