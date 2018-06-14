@@ -119,13 +119,20 @@ public class MainActivity extends AppCompatActivity {
             //Show Admob Interstitial Ad
             if (mInterstitialAd.isLoaded()) {
                 mInterstitialAd.show();
-            } else {
+            }
+
+            else {
                 Toast interstitialToast = Toast.makeText(this, R.string.AdNotReady, Toast.LENGTH_SHORT);
                 interstitialToast.show();
             }
         }
 
+        if (id == R.id.action_clearnote) {
+            EditText1.setText("");
+        }
+
         return super.onOptionsItemSelected(item);
+
     }
 
     public boolean FileExists(String fname){
