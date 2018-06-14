@@ -2,4 +2,5 @@
     <string name="app_name">📄OnePageNote</string>
     <string name="action_settings">Help Developer</string>
     <string name="hint">Type here...</string>
+    <string name="AdNotReady">Ad is not ready yet</string>
 </resources>

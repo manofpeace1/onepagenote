@@ -65,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // Show Interstitial Ad
+    public void ShowInterstitial (View view){
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Toast interstitialToast = Toast.makeText(this, R.string.AdNotReady, Toast.LENGTH_SHORT);
+            interstitialToast.show();
+        }
+    }
+
     public void Save(String fileName) {
         try {
             OutputStreamWriter out =
