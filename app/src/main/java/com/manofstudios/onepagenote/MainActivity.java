@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
         EditText1.setText(Open("Note1.txt"));
 
         //initialize AdMob AppID
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(this, "ca-app-pub-3278806895948346~5229132415");
 
         //Load Admob Interstitial (loads new one when closed)
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3278806895948346/7639673333");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
