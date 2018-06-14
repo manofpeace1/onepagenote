@@ -16,9 +16,18 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+//Admob import
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText EditText1;
+
+    //Admob Interstitial Class
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +46,22 @@ public class MainActivity extends AppCompatActivity {
 
         EditText1 = (EditText)findViewById(R.id.EditText1);
         EditText1.setText(Open("Note1.txt"));
+
+        //initialize AdMob AppID
+        MobileAds.initialize(this, "ca-app-pub-3278806895948346~5229132415");
+
+        //Load Admob Interstitial (loads new one when closed)
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3278806895948346/7639673333");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                // Load the next interstitial.
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+
+        });
 
     }
 
