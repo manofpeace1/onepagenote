@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
         EditText1.setText(Open("Note1.txt"));
 
         //initialize AdMob AppID
-        MobileAds.initialize(this, "ca-app-pub-3278806895948346~5229132415");
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
 
         //Load Admob Interstitial (loads new one when closed)
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3278806895948346/7639673333");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
@@ -63,16 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-    }
-
-    // Show Interstitial Ad
-    public void ShowInterstitial (View view){
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        } else {
-            Toast interstitialToast = Toast.makeText(this, R.string.AdNotReady, Toast.LENGTH_SHORT);
-            interstitialToast.show();
-        }
     }
 
     public void Save(String fileName) {
@@ -125,7 +115,14 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+
+            //Show Admob Interstitial Ad
+            if (mInterstitialAd.isLoaded()) {
+                mInterstitialAd.show();
+            } else {
+                Toast interstitialToast = Toast.makeText(this, R.string.AdNotReady, Toast.LENGTH_SHORT);
+                interstitialToast.show();
+            }
         }
 
         return super.onOptionsItemSelected(item);
