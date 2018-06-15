@@ -131,6 +131,12 @@ public class MainActivity extends AppCompatActivity {
             EditText1.setText("");
         }
 
+        if (id == R.id.action_sharenote) {
+            return true;
+        }
+
+
+
         return super.onOptionsItemSelected(item);
 
     }
