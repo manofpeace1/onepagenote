@@ -1,5 +1,6 @@
 package com.manofstudios.onepagenote;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -132,7 +134,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_sharenote) {
-            return true;
+
+            //select entire text in notes
+            EditText1 = (EditText) findViewById(R.id.EditText1);
+            String dataToShare = EditText1.getText().toString();
+
+            //share selected text
+            Intent myIntent = new Intent(Intent.ACTION_SEND);
+            myIntent.setType("text/plain");
+            String shareTitle = "Shared from OnePageNote";
+            myIntent.putExtra(Intent.EXTRA_SUBJECT,shareTitle);
+            myIntent.putExtra(Intent.EXTRA_TEXT,dataToShare);
+            startActivity(Intent.createChooser(myIntent, "Share your notes using"));
         }
 
 
