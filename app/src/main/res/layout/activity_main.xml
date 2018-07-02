@@ -11,24 +11,26 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
-            android:layout_marginLeft="100dp"
-            android:fontFamily="monospace"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:onClick="saveText"
-            android:text="@string/save" />
-
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="25dp"
+                android:background="@android:color/holo_blue_dark"
+                android:onClick="saveText"
+                android:text="@string/save"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
