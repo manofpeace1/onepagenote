@@ -38,14 +38,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Save("Note1.txt");
-            }
-        });
-
         EditText1 = (EditText)findViewById(R.id.EditText1);
         EditText1.setText(Open("Note1.txt"));
 
@@ -65,6 +57,15 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+    }
+
+    public void saveText (View view) {
+
+        // Get the text view
+        TextView showCountTextView =
+                (TextView) findViewById(R.id.saveButton);
+
+        Save("Note1.txt");
     }
 
     public void Save(String fileName) {
